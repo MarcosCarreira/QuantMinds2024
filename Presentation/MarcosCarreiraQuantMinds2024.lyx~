@@ -1,0 +1,2750 @@
+#LyX 2.4 created this file. For more info see https://www.lyx.org/
+\lyxformat 620
+\begin_document
+\begin_header
+\save_transient_properties true
+\origin unavailable
+\textclass beamer
+\begin_preamble
+\usetheme{Darmstadt}
+%\usetheme{Frankfurt}
+% or ...
+
+\setbeamercovered{transparent}
+\makeatletter
+\providecommand*{\shuffle}{%
+  \mathbin{\mathpalette\shuffle@{}}%
+}
+\newcommand*{\shuffle@}[2]{%
+  % #1: math style
+  % #2: unused
+  \sbox0{$#1\vcenter{}$}%
+  \kern .15\ht0 % side bearing
+  \rlap{\vrule height .25\ht0 depth 0pt width 2.5\ht0}%
+  \raise.1\ht0\hbox to 2.5\ht0{%
+    \vrule height 1.75\ht0 depth -.1\ht0 width .17\ht0 %
+    \hfill
+    \vrule height 1.75\ht0 depth -.1\ht0 width .17\ht0 %
+    \hfill
+    \vrule height 1.75\ht0 depth -.1\ht0 width .17\ht0 %
+  }%
+  \kern .15\ht0 % side bearing
+}
+\makeatother
+\end_preamble
+\use_default_options false
+\maintain_unincluded_children no
+\language english
+\language_package default
+\inputencoding auto-legacy
+\fontencoding auto
+\font_roman "palatino" "default"
+\font_sans "lmss" "default"
+\font_typewriter "default" "default"
+\font_math "auto" "auto"
+\font_default_family default
+\use_non_tex_fonts false
+\font_sc false
+\font_roman_osf false
+\font_sans_osf false
+\font_typewriter_osf false
+\font_sf_scale 100 100
+\font_tt_scale 100 100
+\use_microtype false
+\use_dash_ligatures true
+\graphics default
+\default_output_format default
+\output_sync 0
+\bibtex_command default
+\index_command default
+\paperfontsize 10
+\spacing single
+\use_hyperref false
+\papersize default
+\use_geometry true
+\use_package amsmath 2
+\use_package amssymb 2
+\use_package cancel 1
+\use_package esint 0
+\use_package mathdots 1
+\use_package mathtools 1
+\use_package mhchem 1
+\use_package stackrel 1
+\use_package stmaryrd 1
+\use_package undertilde 1
+\cite_engine basic
+\cite_engine_type default
+\biblio_style plain
+\use_bibtopic false
+\use_indices false
+\paperorientation portrait
+\suppress_date false
+\justification true
+\use_refstyle 0
+\use_formatted_ref 0
+\use_minted 0
+\use_lineno 0
+\index Index
+\shortcut idx
+\color #008000
+\end_index
+\secnumdepth 2
+\tocdepth 2
+\paragraph_separation indent
+\paragraph_indentation default
+\is_math_indent 0
+\math_numbering_side default
+\quotes_style english
+\dynamic_quotes 0
+\papercolumns 1
+\papersides 1
+\paperpagestyle default
+\tablestyle default
+\tracking_changes false
+\output_changes false
+\change_bars false
+\postpone_fragile_content false
+\html_math_output 0
+\html_css_as_file 0
+\html_be_strict false
+\docbook_table_output 0
+\docbook_mathml_prefix 1
+\end_header
+
+\begin_body
+
+\begin_layout Title
+Learning Market Regimes
+\end_layout
+
+\begin_layout Author
+Marcos Costa Santos Carreira
+\end_layout
+
+\begin_layout Institute
+XP Inc
+\end_layout
+
+\begin_layout Date
+QuantMinds - London,
+ 19-Nov-2024
+\end_layout
+
+\begin_layout Standard
+\begin_inset Note Note
+status collapsed
+
+\begin_layout Plain Layout
+The following causes the table of contents to be shown at the beginning of every subsection.
+ Delete this,
+ if you do not want it.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+AtBeginSubsection[]{
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+  
+\backslash
+frame<beamer>{ 
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+    %
+\backslash
+frametitle{Outline}   
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+    
+\backslash
+tableofcontents[currentsection,currentsubsection] 
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+  }
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+If you wish to uncover everything in a step-wise fashion,
+ uncomment the following command:
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+%
+\backslash
+beamerdefaultoverlayspecification{<+->}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Contents
+\end_layout
+
+\end_inset
+
+
+\begin_inset Separator latexpar
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+\begin_inset CommandInset toc
+LatexCommand tableofcontents
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Note Note
+status collapsed
+
+\begin_layout Plain Layout
+Structuring a talk is a difficult task and the following structure may not be suitable.
+ Here are some rules that apply for this solution:
+ 
+\end_layout
+
+\begin_layout Itemize
+Exactly two or three sections (other than the summary).
+ 
+\end_layout
+
+\begin_layout Itemize
+At *most* three subsections per section.
+ 
+\end_layout
+
+\begin_layout Itemize
+Talk about 30s to 2min per frame.
+ So there should be between about 15 and 30 frames,
+ all told.
+\end_layout
+
+\begin_layout Itemize
+A conference audience is likely to know very little of what you are going to talk about.
+ So *simplify*!
+ 
+\end_layout
+
+\begin_layout Itemize
+In a 20min talk,
+ getting the main ideas across is hard enough.
+ Leave out details,
+ even if it means being less precise than you think necessary.
+ 
+\end_layout
+
+\begin_layout Itemize
+If you omit details that are vital to the proof/implementation,
+ just say so once.
+ Everybody will be happy with that.
+ 
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Section
+Acknowledgements
+\begin_inset Argument 2
+status open
+
+\begin_layout Plain Layout
+Credits
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Standard causality applies
+\end_layout
+
+\end_inset
+
+
+\begin_inset Separator latexpar
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+Acknowledgements
+\end_layout
+
+\begin_layout Itemize
+XP Inc
+\end_layout
+
+\begin_layout Itemize
+Emanuel Derman
+\end_layout
+
+\begin_layout Standard
+If this work is good,
+ it's because of them;
+ if it's not good,
+ it's not their fault
+\end_layout
+
+\end_deeper
+\begin_layout Frame
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section
+Regimes
+\begin_inset Argument 2
+status open
+
+\begin_layout Plain Layout
+Regimes
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+What
+\end_layout
+
+\end_inset
+
+
+\begin_inset Separator latexpar
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+One needs to know what a regime is before defining how it could change
+\end_layout
+
+\begin_layout Itemize
+So it must have some regularity
+\end_layout
+
+\begin_layout Itemize
+And some weak form of the anthropic principle (the change cannot be destructive enough to wipe out everything,
+ there should be some kind of recovery)
+\end_layout
+
+\begin_layout Itemize
+So it should have some kind of cycle
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+When
+\end_layout
+
+\end_inset
+
+
+\begin_inset Separator latexpar
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Earliest description of regime changes
+\end_layout
+
+\begin_layout Itemize
+Although one could say the Flood,
+ we'll focus on Joseph's interpretation of the Pharaoh's dream (Genesis 41)
+\end_layout
+
+\begin_layout Itemize
+\begin_inset Quotes eld
+\end_inset
+
+Behold,
+ there come seven years of great plenty throughout all the land of Egypt.
+ And there shall arise after them seven years of famine;
+ and all the plenty shall be forgotten in the land of Egypt;
+ and the famine shall consume the land;
+ ...
+ and take up the fifth part of the land of Egypt in the seven years of plenty.
+ And let them gather all the food of these good years that come,
+ and lay up corn under the hand of Pharaoh for food in the cities,
+ and let them keep it.
+ And the food shall be for a store to the land against the seven years of famine,
+ which shall be in the land of Egypt;
+ that the land perish not through the famine.
+\begin_inset Quotes eld
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Why
+\end_layout
+
+\end_inset
+
+
+\begin_inset Separator latexpar
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+We can distinguish here all of our goals:
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Marked changes from the previous situations
+\end_layout
+
+\begin_layout Itemize
+An eventual return to 
+\begin_inset Quotes eld
+\end_inset
+
+normality
+\begin_inset Quotes erd
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+We also see that prediction is not enough
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+\begin_inset Quotes eld
+\end_inset
+
+Do not spend the wealth from the years of plenty
+\begin_inset Quotes erd
+\end_inset
+
+ means:
+\end_layout
+
+\begin_layout Itemize
+Your actions are a consequence of the past and a function of the possibilities of the future (RL)
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+This work is inspired by Derman's classic 
+\begin_inset Quotes eld
+\end_inset
+
+Regimes of Volatility
+\begin_inset Quotes erd
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+How
+\end_layout
+
+\end_inset
+
+
+\begin_inset Separator latexpar
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+We start from an insurance-like perspective
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+\begin_inset Quotes eld
+\end_inset
+
+I just know that something 
+\strikeout on
+good
+\strikeout default
+ bad is gonna happen / I don't know when
+\begin_inset Quotes erd
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+Maximum Entropy
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+Then move to the idea of regime switching
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+\begin_inset Quotes eld
+\end_inset
+
+Leonid Will Tear Us Apart
+\begin_inset Quotes erd
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+But what are we losing?
+\end_layout
+
+\begin_layout Itemize
+\begin_inset Quotes eld
+\end_inset
+
+I Can See Clearly Now
+\begin_inset Quotes erd
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+Are there other ways to mix the history with the recent past?
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+\begin_inset Quotes eld
+\end_inset
+
+Memory,
+ Uncaring Friend
+\begin_inset Quotes erd
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+Rough Volatility Regressions
+\end_layout
+
+\begin_layout Itemize
+Interest Rates and Central Bank Decisions
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+Can we model paths?
+\end_layout
+
+\begin_layout Standard
+
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section
+Maximum Entropy
+\begin_inset Argument 2
+status open
+
+\begin_layout Plain Layout
+No Surprises
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Roll The Bones
+\end_layout
+
+\end_inset
+
+
+\begin_inset Separator latexpar
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Maximum Entropy Distributions are those that will keep the maximum uncertainty about a random variable given what we know with certainty (typically a moment of some function of the random variable)
+\end_layout
+
+\begin_layout Itemize
+An example is Jaynes' analysis of the Brandeis Dice problem
+\end_layout
+
+\begin_layout Itemize
+We know nothing particular about a dice => we should expect an uniform distribution as the probability of each face
+\end_layout
+
+\begin_layout Itemize
+But if we say that after a really large number of tosses the average number of spots was 4.5 (instead of 3.5),
+ what can we conclude?
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Horror vacui
+\end_layout
+
+\end_inset
+
+
+\begin_inset Separator latexpar
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+The answer is not the the probabilities of faces 1 and 2 are equal to 0;
+ instead,
+ the probabilities should be increasing with the number of spots but never zero for any face:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement document
+alignment document
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename DiceMaxEntropyChart.png
+	lyxscale 50
+	scale 45
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+How Can I Be Sure?
+\end_layout
+
+\end_inset
+
+
+\begin_inset Separator latexpar
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+It takes a lot to say something is impossible
+\end_layout
+
+\begin_layout Itemize
+Although a Gaussian is the Maximum Entropy Distribution given the mean and the variance of a sample,
+ knowing the variance is quite a strong claim
+\end_layout
+
+\begin_layout Itemize
+(This is why we're here after all)
+\end_layout
+
+\begin_layout Itemize
+Can we use the Student's T Distribution to understand what do we need to go from the nihilism of the Cauchy to the certainty of the Gaussian?
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Finally some equations
+\end_layout
+
+\end_inset
+
+
+\begin_inset Separator latexpar
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+What do we (think we) know?
+\end_layout
+
+\begin_layout Itemize
+The expected value of 
+\begin_inset Formula $\ln\left(1+\frac{x^{2}}{\nu}\right)$
+\end_inset
+
+:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{equation}
+\int_{-\infty}^{+\infty}\left[p\left(x\right)\cdot\ln\left(1+\frac{x^{2}}{\nu}\right)\right]\mathrm{d}x=\omega\label{eq:Student's_T_Condition}
+\end{equation}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+What do we get?
+\end_layout
+
+\begin_layout Itemize
+Something similar to the normalized Student's T PDF:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{equation}
+p\left(x\right)=\frac{\left(1+\frac{x^{2}}{\nu}\right)^{\theta\left(\omega\right)}}{\sqrt{\nu}\cdot B\left(-\theta\left(\omega\right)-\frac{1}{2},\frac{1}{2}\right)}=\frac{\left(1+\frac{x^{2}}{ν}\right)^{-\left(\frac{\nu+1}{2}\right)}}{\sqrt{\nu}\cdot B\left(\frac{\nu}{2},\frac{1}{2}\right)}\label{eq:MaxEntDist_from_STT_Condition}
+\end{equation}
+
+\end_inset
+
+So we want to match:
+\begin_inset Formula 
+\begin{equation}
+\nu=-2\cdot\theta\left(\omega\right)-1\label{eq:Goal_STT_Condition}
+\end{equation}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+With the inverse function 
+\begin_inset Formula $\theta$
+\end_inset
+
+ defined as (
+\begin_inset Formula $\psi$
+\end_inset
+
+ is the Digamma function):
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\theta\left(\omega\right)=x\ ,\ \left[\psi\left(-x\right)-\psi\left(-x-\frac{1}{2}\right)\right]=\omega
+\]
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+If it doesn't fit you must 
+\strikeout on
+acquit
+\strikeout default
+ try another n
+\end_layout
+
+\end_inset
+
+
+\begin_inset Separator latexpar
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+So if the equation 
+\begin_inset Formula $\nu=-2\cdot\theta\left(\omega\right)-1$
+\end_inset
+
+ doesn't fit,
+ ie the result from 
+\begin_inset Formula $\nu=-2\cdot\theta\left(\omega\right)-1$
+\end_inset
+
+ derived from transforming the data with 
+\begin_inset Formula $\ln\left(1+\frac{x^{2}}{\nu}\right)$
+\end_inset
+
+ is not coherent with the 
+\begin_inset Formula $\nu$
+\end_inset
+
+ we used,
+ we must try another value of 
+\begin_inset Formula $\nu$
+\end_inset
+
+ to transform the data.
+\end_layout
+
+\begin_layout Standard
+An example with data generated from a Student's T with 
+\begin_inset Formula $\nu=3$
+\end_inset
+
+ (calculating the accumulated mean of the data with 3 different 
+\begin_inset Formula $\ln\left(1+\frac{x^{2}}{\nu}\right)$
+\end_inset
+
+transformations and calculating 
+\begin_inset Formula $\nu=-2\cdot\theta\left(\omega\right)-1$
+\end_inset
+
+):
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement document
+alignment document
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename ImpliedDegreeStT.png
+	lyxscale 50
+	scale 30
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Voluble volatilities
+\end_layout
+
+\end_inset
+
+
+\begin_inset Separator latexpar
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+We think the Gaussian would not be good (SPX example):
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement document
+alignment document
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename DailyVarSPX.png
+	lyxscale 50
+	scale 30
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Say goodbye to the variance
+\end_layout
+
+\end_inset
+
+
+\begin_inset Separator latexpar
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+And even the Student's T is barely viable;
+ if you want a fit that allows for a variance we need 
+\begin_inset Formula $\nu=2.05$
+\end_inset
+
+ (or something similar just above 2),
+ and even then there's no sign of a convergence after decades of data (
+\begin_inset Formula $\nu=1.5$
+\end_inset
+
+ looks better):
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement document
+alignment document
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename ImpliedDegreeStTSPX.png
+	lyxscale 50
+	scale 30
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section
+Leonid Will Tear Us Apart
+\begin_inset Argument 2
+status open
+
+\begin_layout Plain Layout
+Separation
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Regime Switching
+\end_layout
+
+\end_inset
+
+
+\begin_inset Separator latexpar
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+A common solution for voluble volatilities is regime switching,
+ where 2 (or more) regimes characterized by different volatilities (or different distributions) switch according to transition matrices.
+\end_layout
+
+\begin_layout Itemize
+Example:
+ An index is modeled as a low vol (12%) regime and a high vol (30%) regime,
+ with transition probabilities 10% for low to high and 25% high to low.
+\end_layout
+
+\begin_layout Itemize
+It might be interesting to have a tool to detect a regime change as early as possible
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+A classic paper is Adams and MacKay (
+\begin_inset Quotes eld
+\end_inset
+
+Bayesian Online Changepoint Detection
+\begin_inset Quotes erd
+\end_inset
+
+)
+\end_layout
+
+\end_deeper
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Leonid Will Tear Us Apart
+\end_layout
+
+\end_inset
+
+
+\begin_inset Separator latexpar
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+One of the common metrics is the p-Wasserstein Distance (recent papers by Blanka Horvath and others):
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+For 
+\begin_inset Formula $p=1$
+\end_inset
+
+ we have:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{equation}
+W_{1}=\int_{-\infty}^{+\infty}\left|F_{1}\left(x\right)-F_{2}\left(x\right)\right|\mathrm{d}x\label{eq:1-Wasserstein_Distance}
+\end{equation}
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+This is a distance between distributions
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Let's see some examples
+\end_layout
+
+\end_deeper
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Just sigma
+\end_layout
+
+\end_inset
+
+
+\begin_inset Separator latexpar
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+One characteristic of the Gaussian is that it can be summarized through its sufficient statistics (mean and variance)
+\end_layout
+
+\begin_layout Itemize
+The Wasserstein distance between two centered Gaussian (mean=0) is:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{equation}
+W_{1}\left(\sigma_{1},\sigma_{2}\right)=\left|\sigma_{1}-\sigma_{2}\right|\cdot\sqrt{\frac{2}{\pi}}\label{eq:1-Wasserstein_Gaussians}
+\end{equation}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+But the distance between the two centered standardized Student's T distributions with the same variances as the Gaussians is smaller
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement document
+alignment document
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename Gaussians3.png
+	lyxscale 50
+	scale 30
+
+\end_inset
+
+
+\begin_inset space \space{}
+\end_inset
+
+
+\begin_inset space \space{}
+\end_inset
+
+
+\begin_inset Graphics
+	filename StTs3.png
+	lyxscale 50
+	scale 30
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+How different you are
+\end_layout
+
+\end_inset
+
+
+\begin_inset Separator latexpar
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+We can see it clearly on the PDFs
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement document
+alignment document
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename GaussiansStTs3.png
+	lyxscale 50
+	scale 30
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+The fact that the Gaussians are distinguishable means they are not MaxEnt distributions - they need to be clearly separable and this is much easier without fat tails.
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+A small step
+\end_layout
+
+\end_inset
+
+
+\begin_inset Separator latexpar
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+If we plot the change in the square root of the Variance for the two distributions we can see how the Gaussians are more distant for the same change in variance:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement document
+alignment document
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename Distance_vs_Vol.png
+	lyxscale 50
+	scale 30
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+To infinity and beyond!
+\end_layout
+
+\end_inset
+
+
+\begin_inset Separator latexpar
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+But what's the problem with using Gaussians?
+\end_layout
+
+\begin_layout Itemize
+The Gaussian distribution is really lousy for Expected Shortfall,
+ as there is an illusion that any new record will not exceed the previous record by much
+\end_layout
+
+\begin_layout Itemize
+So the main danger is not necessarily using a mixture of Gaussians to identify regime changes,
+ but to believe that the future realizations can be modeled through a mixture of Gaussians
+\end_layout
+
+\begin_layout Itemize
+The general lesson is that if you want a clear distinction between distributions it'll be hard to make them fat-tailed.
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section
+Transitions
+\begin_inset Argument 2
+status open
+
+\begin_layout Plain Layout
+Transitions
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Durations
+\end_layout
+
+\end_inset
+
+
+\begin_inset Separator latexpar
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+In previous presentations on microstructure we discussed how volatility could be seen less as a frequentist statistic about the number of price changes within a period and more of a GBM parameter with direct influence on the expected time between price changes
+\end_layout
+
+\begin_layout Itemize
+This allows us to use a probability distribution to model and update volatility (with all the caveats of how hard it is to distinguish between 
+\begin_inset Formula $\mu$
+\end_inset
+
+ and 
+\begin_inset Formula $\sigma$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+And these times between price changes follow a lognormal distribution as expected from their relationship with the volatilities
+\end_layout
+
+\begin_layout Itemize
+This is important - a market with a predictable time window for a price change seems too predictable
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+I Can See Clearly Now
+\end_layout
+
+\end_inset
+
+
+\begin_inset Separator latexpar
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+But this is exactly what happens in crashes and regime changes
+\end_layout
+
+\begin_layout Itemize
+The predictive power of Order Book Imbalance increases,
+ and the predictive power of the past few moves increases as well
+\end_layout
+
+\begin_layout Itemize
+It's this reduction of uncertainty,
+ when both informed and noise traders have an alignment of information and reach the same conclusions that is the hallmark of regime changes
+\end_layout
+
+\begin_layout Itemize
+Remember how the Gaussian was characterized by the sufficient statistics - after a few realizations the information brought by a new realization goes to zero
+\end_layout
+
+\begin_layout Itemize
+It's when each new realization is very informative (ie it has predictive power over the next realizations) that we have a regime change
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section
+Memory,
+ Uncaring Friend
+\begin_inset Argument 2
+status open
+
+\begin_layout Plain Layout
+Rough Vol
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Rough Vol Regressions
+\end_layout
+
+\end_inset
+
+
+\begin_inset Separator latexpar
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+There's a great paper by Mikko Pakkanen and others (“Decoupling the short and long-term behavior of stochastic volatility”) which we used to investigate the coefficients of the log-variance prediction
+\end_layout
+
+\begin_layout Itemize
+From:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{equation}
+\mathbb{E}\left[\log\left(\sigma_{t+\Delta}^{2}\right)\vert\mathcal{F}_{t}\right]\approx\frac{\cos\left(H\cdot\pi\right)}{\pi}\Delta^{H+\frac{1}{2}}\int_{-\infty}^{t}\frac{\log\left(\sigma_{s}^{2}\right)}{\left(t-s+\Delta\right)\left(t-s\right)^{H+\frac{1}{2}}}\mathrm{d}s
+\end{equation}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+We reach:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{align}
+\mathbb{E}\left[\log\left(\sigma_{\Delta}^{2}\right)\vert\mathcal{F}_{0}\right] & \approx\frac{\cos\left(H\cdot\pi\right)}{2\pi}\left(\psi\left(\frac{3}{4}-\frac{H}{2}\right)-\psi\left(\frac{1}{4}-\frac{H}{2}\right)\right)\log\left(\sigma_{0}^{2}\right)\nonumber \\
++ & \sum_{j=2}^{\infty}\left\{ \left(-1\right)^{-H-\frac{1}{2}}B_{\left(-j\right),\left(1-j\right)}\left(\frac{1}{2}-H,0\right)\log\left(\sigma_{\left(1-j\right)\cdot\Delta}^{2}\right)\right\} 
+\end{align}
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Efficient Coefficients
+\end_layout
+
+\end_inset
+
+
+\begin_inset Separator latexpar
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Where 
+\begin_inset Formula $\psi$
+\end_inset
+
+ is the Digamma function and 
+\begin_inset Formula $B_{x_{1},x_{2}}\left(a,b\right)$
+\end_inset
+
+ is the incomplete beta function,
+ defined as:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+B_{x_{1},x_{2}}\left(a,b\right)=\int_{x_{1}}^{x_{2}}x^{a-1}\left(1-x\right)^{b-1}\mathrm{d}x
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+Rewriting:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{align}
+\mathbb{E}\left[\log\left(\sigma_{\Delta}^{2}\right)\vert\mathcal{F}_{0}\right] & \approx w_{1}\left(H\right)\log\left(\sigma_{0}^{2}\right)\nonumber \\
++ & \sum_{j=2}^{\infty}\left\{ w_{j}\left(H\right)\log\left(\sigma_{\left(1-j\right)\cdot\Delta}^{2}\right)\right\} 
+\end{align}
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+H is enough
+\end_layout
+
+\end_inset
+
+
+\begin_inset Separator latexpar
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+This formula has 4 noteworthy characteristics:
+\end_layout
+
+\begin_layout Standard
+(i) The weights of the log-variances depend only on H
+\end_layout
+
+\begin_layout Standard
+(ii) The 1st weight 
+\begin_inset Formula $w_{1}\left(H\right)$
+\end_inset
+
+ is such that 
+\begin_inset Formula $\frac{1}{2}\leq w_{1}\left(H\right)\leq1$
+\end_inset
+
+ for 
+\begin_inset Formula $0\leq H\leq\frac{1}{2}$
+\end_inset
+
+;
+ in fact,
+ it can be approximated by 
+\begin_inset Formula $\frac{1}{2}+H$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+(iii) The other weights 
+\begin_inset Formula $w_{j}\left(H\right)$
+\end_inset
+
+ are products of two complex numbers,
+ but the imaginary part of the product gets chopped (literally:
+ when using Mathematica or Python's mpmath to deal with complex numbers the function to get rid of the small terms is Chop)
+\end_layout
+
+\begin_layout Standard
+(iv) The sum of the weights converges very slowly to 1,
+ and they decay really slowly (after 20 points one could almost treat them as the same number)
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Memory,
+ Uncaring Friend
+\end_layout
+
+\end_inset
+
+
+\begin_inset Separator latexpar
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+If weight #499 is basically the same as weight #500 (and they are still needed):
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement document
+alignment document
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename Sumw.png
+	lyxscale 50
+	scale 30
+
+\end_inset
+
+
+\begin_inset space \space{}
+\end_inset
+
+
+\begin_inset space \space{}
+\end_inset
+
+
+\begin_inset Graphics
+	filename Ratiow.png
+	lyxscale 50
+	scale 30
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+Then the order is not important,
+ and our memory only cares about the frequency of these past realizations
+\end_layout
+
+\begin_layout Itemize
+So we could replace the sum after 5 or 10 terms with the stationary distribution of log-variance
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Keeping the tails
+\end_layout
+
+\end_inset
+
+
+\begin_inset Separator latexpar
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+So by being able to sample from the stationary distribution without bias (but with a low weight) and using the recent past in a regression we end up with something similar to Guyon's PDV model (without the trend component):
+ a fast decay kernel and a long memory kernel,
+ but without losing the ability to sample from the tails
+\end_layout
+
+\begin_layout Itemize
+This blurs the boundaries among regimes,
+ since it might be hard to have a clear demarcation between periods of low and high volatility
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section
+Term Structures
+\begin_inset Argument 2
+status open
+
+\begin_layout Plain Layout
+Anchor
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Anchors 
+\end_layout
+
+\end_inset
+
+
+\begin_inset Separator latexpar
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+When looking at the dynamics of Interest Rate Term Structures,
+ it is important to remember that,
+ in most countries guided by an inflation targeting regime,
+ these variables are important:
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+The past few decisions of the Central Bank (ie,
+ which kind of cycle we're in,
+ if any)
+\end_layout
+
+\begin_layout Itemize
+And the level of the rate (there is some mean reversion,
+ 10 year rates have had a narrower range than short rates)
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+The episodes where the short rate was close to (or below) zero show how this affected the dynamics
+\end_layout
+
+\begin_layout Itemize
+And Curvature is related to the Slope (papers and talks by Andreasen,
+ Sokol,
+ etc.)
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+US Rates
+\end_layout
+
+\end_inset
+
+
+\begin_inset Separator latexpar
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Signature components of USD Rates:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement document
+alignment document
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename US_0_2.png
+	lyxscale 50
+	scale 25
+
+\end_inset
+
+
+\begin_inset space \space{}
+\end_inset
+
+
+\begin_inset space \space{}
+\end_inset
+
+
+\begin_inset space \space{}
+\end_inset
+
+
+\begin_inset Graphics
+	filename US_2_12.png
+	lyxscale 50
+	scale 25
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+US Rates
+\end_layout
+
+\end_inset
+
+
+\begin_inset Separator latexpar
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Signature components of USD Rates:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement document
+alignment document
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename US_mat.png
+	lyxscale 50
+	scale 20
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Brazilian Rates
+\end_layout
+
+\end_inset
+
+
+\begin_inset Separator latexpar
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Signature components of Brazilian Rates:
+\end_layout
+
+\begin_layout Quotation
+\begin_inset Float figure
+placement document
+alignment document
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename BZ_0_2.png
+	lyxscale 50
+	scale 24
+
+\end_inset
+
+
+\begin_inset space \space{}
+\end_inset
+
+
+\begin_inset space \space{}
+\end_inset
+
+
+\begin_inset space \space{}
+\end_inset
+
+
+\begin_inset Graphics
+	filename BZ_2_12.png
+	lyxscale 50
+	scale 24
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Brazilian Rates
+\end_layout
+
+\end_inset
+
+
+\begin_inset Separator latexpar
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Signature components of Brazilian Rates:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement document
+alignment document
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename BZ_mat.png
+	lyxscale 50
+	scale 20
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section
+To do
+\begin_inset Argument 2
+status open
+
+\begin_layout Plain Layout
+To do
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Methods and code
+\end_layout
+
+\end_inset
+
+
+\begin_inset Separator latexpar
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Port Mathematica code to Python
+\end_layout
+
+\begin_layout Itemize
+Comparison with BOCD and Blanka's results
+\end_layout
+
+\begin_layout Itemize
+Publish results
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Data and models
+\end_layout
+
+\end_inset
+
+
+\begin_inset Separator latexpar
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Investigate where paths (as typical sequences,
+ including order when useful,
+ or as their signature representations) can work as components of regimes
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Bouchaud
+\end_layout
+
+\begin_layout Itemize
+Blanka
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+Multivariate
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Maximum entropy copulas
+\end_layout
+
+\begin_layout Itemize
+Distances are harder to calculate
+\end_layout
+
+\end_deeper
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section
+Conclusions
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+What this talk was about anyway?
+\end_layout
+
+\end_inset
+
+
+\begin_inset Separator latexpar
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+Regime changes
+\end_layout
+
+\begin_layout Itemize
+We start 
+\color red
+without clustering or sequence,
+ using maximum entropy
+\end_layout
+
+\begin_layout Itemize
+\begin_inset Quotes eld
+\end_inset
+
+Sticky
+\begin_inset Quotes erd
+\end_inset
+
+ distributions 
+\color red
+need to be distinguishable and therefore 
+\begin_inset Quotes eld
+\end_inset
+
+narrow
+\begin_inset Quotes erd
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+Regime changes are characterized 
+\color red
+by an increase in predictive power
+\end_layout
+
+\begin_layout Itemize
+IR curves 
+\color red
+have relatively few degrees of freedom,
+ anchored by Central Bank cycles and some degree of mean reversion
+\end_layout
+
+\begin_layout Standard
+Prediction
+\end_layout
+
+\begin_layout Itemize
+Rough volatilities 
+\color red
+can be useful as a 
+\begin_inset Quotes eld
+\end_inset
+
+fast
+\begin_inset Quotes erd
+\end_inset
+
+ kernel and a complete history with fat tails
+\end_layout
+
+\begin_layout Itemize
+
+\color red
+Guyon's PDV
+\color inherit
+ is interesting but 
+\color red
+roughness is a feature not a bug
+\end_layout
+
+\begin_layout Itemize
+
+\color red
+Paths are promising
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section*
+References
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Papers
+\end_layout
+
+\end_inset
+
+
+\begin_inset Separator latexpar
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Carreira,
+ M.
+ C.
+ S..
+ (2023),
+ “Core Signatures and Inversions” 
+\begin_inset CommandInset href
+LatexCommand href
+name "Core Signatures and Inversions"
+target "https://www.researchgate.net/publication/374449143_Core_Signatures_and_Inversions"
+literal "false"
+
+\end_inset
+
+ (other papers and notes are available at ResearchGate or my GitHub)
+\end_layout
+
+\begin_layout Itemize
+Derman,
+ E.
+ (1999),
+ “Regimes of Volatility - Some Observations on the Variation of S&P 500 Implied Volatilities” 
+\begin_inset CommandInset href
+LatexCommand href
+name "Regimes of Volatility"
+target "https://emanuelderman.com/regimes-of-volatility-risk-april-1999/"
+literal "false"
+
+\end_inset
+
+ 
+\end_layout
+
+\begin_layout Itemize
+Bennedsen,
+ M.,
+ Lunde,
+ A.
+ and Pakkanen,
+ M.
+ (2016) “Decoupling the short- and long-term behavior of stochastic volatility” 
+\begin_inset CommandInset href
+LatexCommand href
+name "arXiv:1610.00332"
+target "https://arxiv.org/abs/1610.00332"
+literal "false"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+Horvath,
+ B and Issa,
+ Z.
+ (2023) 
+\begin_inset Quotes eld
+\end_inset
+
+Non-parametric online market regime detection and regime clustering for multidimensional and path-dependent data structures
+\begin_inset Quotes erd
+\end_inset
+
+ 
+\begin_inset CommandInset href
+LatexCommand href
+name "SSRN:4493344"
+target "https://papers.ssrn.com/sol3/papers.cfm?abstract_id=4493344"
+literal "false"
+
+\end_inset
+
+ 
+\end_layout
+
+\begin_layout Itemize
+Morel,
+ R.,
+ Mallat,
+ S.
+ and Bouchaud,
+ J-P.
+ (2023).
+ “Path Shadowing Monte-Carlo” 
+\begin_inset CommandInset href
+LatexCommand href
+name "arXiv:2308.01486"
+target "https://arxiv.org/abs/2308.01486"
+literal "false"
+
+\end_inset
+
+ 
+\end_layout
+
+\begin_layout Itemize
+Adams,
+ R.
+ P.
+ and MacKay,
+ D.
+ J.
+ C.
+ (2007).
+ “Bayesian Online Changepoint Detection” 
+\begin_inset CommandInset href
+LatexCommand href
+name "arXiv:0710.3742"
+target "https://arxiv.org/abs/0710.3742"
+literal "false"
+
+\end_inset
+
+ 
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Books
+\end_layout
+
+\end_inset
+
+
+\begin_inset Separator latexpar
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Kapur,
+ J.N.,
+ “Maximum Entropy Models in Science and Engineering
+\begin_inset Quotes erd
+\end_inset
+
+ New Age International Publishers (1989)
+\end_layout
+
+\begin_layout Itemize
+Cover,
+ T.
+ M.
+ and Thomas,
+ J.
+ A.
+ “Elements of Information Theory” Wiley,
+ 2nd Edition (2006)
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
+
+\end_layout
+
+\end_body
+\end_document
